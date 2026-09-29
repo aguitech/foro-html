@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3.04 · Cuenta regresiva 1</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="brand-logo"><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>BanCoppel</div>
+      <div class="brand-divider"></div>
+      <div class="brand-logo logo-atore"><span class="dots"><span class="dot"></span><span class="dot"></span><span class="dot"></span></span>Atore Coppel</div>
+    </div>
+    <div class="section-tag"><span class="claqueta">🎬</span> RODAJE · 3</div>
+  </header>
+
+  <main>
+    <div class="screen">
+      <div class="screen-inner">
+        <div class="split">
+          <div class="left">
+            <div class="director-avatar">🎬</div>
+          </div>
+
+          <div style="text-align:center;">
+            <span class="escena-tag">ESCENA 1 DE 3</span>
+            <h2 class="subtitle" style="margin-top:14px;">En posición... ¡vamos a comenzar!</h2>
+
+            <div class="countdown" id="countdown">
+              <div class="circle active">3</div>
+              <div class="circle">2</div>
+              <div class="circle">1</div>
+            </div>
+
+            <div class="look-cam">MIRA DIRECTAMENTE A LA CÁMARA</div>
+
+            <div style="margin-top:32px;">
+              <a class="btn btn-primary" href="3.05-grabacion-1.html">Iniciar grabación</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <span class="pill"><span class="ico">🛡️</span> Tu información está protegida. Consulta el Aviso de privacidad.</span>
+    <span class="pill"><span class="ico">💡</span> TIP DEL DIRECTOR — Tú eres el protagonista.</span>
+  </footer>
+
+  <script>
+    // Pequeña animación visual: resalta 3 → 2 → 1
+    const circles = document.querySelectorAll('#countdown .circle');
+    let i = 0;
+    setInterval(() => {
+      circles.forEach(c => c.classList.remove('active'));
+      i = (i + 1) % circles.length;
+      circles[i].classList.add('active');
+    }, 900);
+  </script>
+</body>
+</html>
